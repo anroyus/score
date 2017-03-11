@@ -1,0 +1,19 @@
+Input = 1,000,000
+
+ ----------------------------------
+ External Sort Program initialised 
+ ----------------------------------
+ Mergesort started. Creating and writing to disk temporary chunks
+
+ Merge Sort completed. Total 4 chunks generated.
+
+ Total Time Taken to generate sorted chunks using Merge Sort is 0.744717 secs
+
+ Calling HeapSort to Merge sorted chunks 
+
+ Sorted Chunks are merged using Heap Sort and writen to output file = merged_output.txt
+
+ Variance of sorted Chunks are writen to output file = zscore_output.txt
+
+ Total time taken to Heapsort and write output file is 0.990500 secs
+
