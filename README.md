@@ -29,9 +29,8 @@ Step 2: Perform z-score normalization on the input and write them in descending 
   
 
 
-----------------------------------------------------------------
 Example 1a - Sample RUN with 10 Floating Point Numbers as input
-----------------------------------------------------------------
+
 Generation Step:
 
 ./main g 10
@@ -45,9 +44,9 @@ Run Step:
 
  ./main s
 
- +--------------------------------------------------------------
+
  Performing z-score Normalization on the Floating Point Inputs 
- +--------------------------------------------------------------
+
  Step 1: Sorting Input in smaller chunks using Mergesort and writing into disk as temporary files
 
  Total Time Taken to generate sorted chunks using Merge Sort is 0.000141 secs
@@ -93,10 +92,10 @@ pipa@pipa-VirtualBox:~/final-zscore/external-sort$ ./main  g 1000000
  1000000 Random Floating point numbers have been generated in input.txt
 pipa@pipa-VirtualBox:~/final-zscore/external-sort$ ./main s
 
- +--------------------------------------------------------------
+
  Performing z-score Normalization on the Floating Point Inputs 
- +--------------------------------------------------------------
- Step 1: Sorting Input in smaller chunks using Mergesort and writing into disk as temporary files
+
+ Sorting Input in smaller chunks using Mergesort and writing into disk as temporary files
 
  Total Time Taken to generate sorted chunks using Merge Sort is 0.833862 secs
 
