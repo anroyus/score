@@ -6,3 +6,4 @@ Issues :
 
 Input must be delimited by new-line
 Output file has one less number than total input
+# score
