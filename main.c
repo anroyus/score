@@ -29,24 +29,15 @@ void merge(float * lst, int a, int b, int s )
     
      while ((ai < b) || (bi < s)) 
      {   
-          if (bi == s)
-          {  tmp[ti++] = lst[ai++];
-          }
-          else if (ai == b)  
-          {
+        if (bi == s)
+            tmp[ti++] = lst[ai++];
+        else if (ai == b)  
             tmp[ti++] = lst[bi++];
-          }
-          else if ((lst[ai]) > lst[bi])
-          {
-             tmp[ti++] = lst[ai++];
-          }
-          else 
-          {
-             tmp[ti++] = lst[bi++];
-          }
+        else if ((lst[ai]) > lst[bi])
+            tmp[ti++] = lst[ai++];
+        else 
+            tmp[ti++] = lst[bi++];
       }   
-    
- 
     
      for (ti = a; ti < s; ti++)
           lst[ti] = tmp[ti];
@@ -57,6 +48,10 @@ void merge(float * lst, int a, int b, int s )
         tmp = NULL;
      }
 }
+
+
+
+
 
 /* Mergesort divides the entire list of inputs into two halves recursively
  * and merges them again into a sorted list during the merge function */
@@ -322,7 +317,6 @@ void printBanner()
 
 
 
-
 /* Main function which reads the inputs and creates sorted chunks and handles the case where number
  * of input is smaller than buffer size */
 
@@ -370,9 +364,9 @@ int main(int argc, char **argv)
         }
         else
         {
-            printf("\n ----------------------------------");
-            printf("\n External Sort Program initialised \n"); 
-            printf(" ----------------------------------");
+            printf("\n +--------------------------------------------------------------");
+            printf("\n Performing z-score Normalization on the Floating Point Inputs "); 
+            printf("\n +--------------------------------------------------------------");
             
             floatList = (float *)malloc(sizeof(float)*MAX_FLOATS_READ_IN_HEAP );
  
@@ -382,7 +376,7 @@ int main(int argc, char **argv)
             t = clock(); // Initial Time
             t1 = t;
 
-            printf("\n Mergesort started. Creating and writing to disk temporary chunks\n");
+            printf("\n Sorting Input in smaller chunks using Mergesort and writing into disk as temporary files\n");
             
             more_input = 1;
 
@@ -392,7 +386,7 @@ int main(int argc, char **argv)
                 {
                     if( fscanf(fp_read,"%f,",floatList+num_of_floats_read) == 0 )
                     {
-                        printf("\n Invalid input received. Please use proper input and try again. \n");
+                        printf("\n Invalid input received. Try again. \n");
                         exit(1);
                     }
                     mean += *(floatList+num_of_floats_read);
@@ -415,7 +409,7 @@ int main(int argc, char **argv)
                 #ifdef TIMER
                     t1 = clock() - t1; 
                     cpu_time_used = ((double)t1)/CLOCKS_PER_SEC; // Time in seconds
-                    printf("\n Mergesort for chunk %d complete. Time taken is %lf \n",run_size,cpu_time_used);
+                    printf("\n Completed. Mergesort for chunk %d complete. Time taken was  %lf \n",run_size,cpu_time_used);
                 #endif // TIMER 
 
                 actual_nums_read += num_of_floats_read;
@@ -428,12 +422,11 @@ int main(int argc, char **argv)
             t = clock() - t;    // Final Time
             cpu_time_used = ((double)t)/CLOCKS_PER_SEC; // Time in seconds
 
-            printf("\n Merge Sort completed. Total %d chunks generated.\n",run_size);
             printf("\n Total Time Taken to generate sorted chunks using Merge Sort is %lf secs\n",cpu_time_used);
 
             mean = mean/actual_nums_read;
 
-            printf ("\n Calling HeapSort to Merge sorted chunks \n");
+            printf ("\n Now Calling HeapSort to Merge sorted chunks into one file\n");
             
             t = clock(); // Initial Time
             
@@ -502,7 +495,7 @@ int main(int argc, char **argv)
             
             t = clock() - t;  // Final Time
             cpu_time_used = ((double)t)/CLOCKS_PER_SEC; // Time in seconds
-            printf("\n Total time taken to Heapsort and write output file is %lf secs\n\n",cpu_time_used);
+            printf("\n Total time taken to Heapsort and write merged output file is %lf secs\n\n",cpu_time_used);
 
             zscore_calculator(actual_nums_read);
    
