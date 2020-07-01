@@ -80,7 +80,7 @@ Run Step:
  The rest of the zscores can be found in zscore_output.txt
 
  ************************************************** 
-pipa@pipa-VirtualBox:~/final-zscore/external-sort$ 
+sys-prof1@sys-VirtualBox:~/final-zscore/external-sort$ 
 
 
  ************************************************** 
