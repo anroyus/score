@@ -85,7 +85,7 @@ pipa@pipa-VirtualBox:~/final-zscore/external-sort$
 
  ************************************************** 
 
-pipa@pipa-VirtualBox:~/final-zscore/external-sort$ ./main  g 1000000
+sys-prof1@sys-VirtualBox:~/final-zscore/external-sort$ ./main  g 1000000
 
  Generating 1000000 Random Floating point numbers .. 
 
